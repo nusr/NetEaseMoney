@@ -9,6 +9,7 @@
     "key": "adb shell input keyevent 82",
     "phone": "adb devices",
     "lint-staged": "lint-staged",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "build:android": "cd android && ./gradlew assembleRelease"
   },
   "devDependencies": {
@@ -19,15 +20,17 @@
     "@types/react": "^16.9.2",
     "@types/react-native": "^0.60.12",
     "@types/react-test-renderer": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
     "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.9.0",
     "typescript": "^3.6.2"
-  },
-  "jest": {
-    "preset": "react-native"
   },
   "dependencies": {
     "@antv/f2": "^3.4.1",
@@ -36,8 +39,25 @@
     "react-native": "0.60.5",
     "react-native-canvas": "^0.1.33",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-modal-datetime-picker": "^7.5.0",
     "react-native-reanimated": "^1.2.0",
     "react-native-screens": "^2.0.0-alpha.1",
-    "react-navigation": "^4.0.0"
+    "react-navigation": "^4.0.0",
+    "react-navigation-stack": "^1.5.3",
+    "react-navigation-tabs": "^2.4.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

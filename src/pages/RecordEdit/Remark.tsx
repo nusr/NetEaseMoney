@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
-// import DateTimePicker from 'react-native-modal-datetime-picker';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 import colorConfig from '../../shared/color';
 import Button from '../../components/Button';
 
@@ -73,11 +73,11 @@ export default function Report() {
             onChangeText={handleInput}
           />
         </View>
-        {/* <DateTimePicker
+        <DateTimePicker
           isVisible={pickerVisible}
           onConfirm={handleConfirm}
           onCancel={handleCancel}
-        /> */}
+        />
       </View>
       <View style={{paddingTop: 30}}>
         <View style={styles.flex}>

@@ -4,76 +4,76 @@ import colorConfig from '../../shared/color'
 import {showNum} from '../../utils'
 
 const styles = StyleSheet.create({
-    container: {
-        color: colorConfig.white,
-        paddingLeft: colorConfig.basePadding,
-        paddingRight: colorConfig.basePadding,
-        paddingTop: 60
-    },
-    outWrapper: {
-        ...colorConfig.flexBetween,
-        paddingTop: 30
-    },
-    contentWrapper: {
-        ...colorConfig.flexBetween,
-        paddingTop: 30,
-        paddingBottom: 30
-    },
-    title: {
-        fontSize: colorConfig.baseFontSize,
-        color: colorConfig.lightGray
-    },
-    number: {
-        fontSize: colorConfig.baseFontSize,
-        color: colorConfig.white,
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-    item: colorConfig.flexBetween
+  container: {
+    color: colorConfig.white,
+    paddingLeft: colorConfig.basePadding,
+    paddingRight: colorConfig.basePadding,
+    paddingTop: 60
+  },
+  outWrapper: {
+    ...colorConfig.flexBetween,
+    paddingTop: 30
+  },
+  contentWrapper: {
+    ...colorConfig.flexBetween,
+    paddingTop: 30,
+    paddingBottom: 30
+  },
+  title: {
+    fontSize: colorConfig.baseFontSize,
+    color: colorConfig.lightGray
+  },
+  number: {
+    fontSize: colorConfig.baseFontSize,
+    color: colorConfig.white,
+    paddingLeft: 15,
+    paddingRight: 15
+  },
+  item: colorConfig.flexBetween
 })
 const iconList = ['ios-eye', 'ios-eye-off']
 const getSnow = (num) => {
-    const result = []
-    for (let i = 0; i < num; i += 1) {
-        result.push('*')
-    }
-    return result.join('')
+  const result = []
+  for (let i = 0; i < num; i += 1) {
+    result.push('*')
+  }
+  return result.join('')
 }
 export default function HomeHeader(props) {
-    console.log(props)
-    const {data = {out: 19300, in: 1102, other: 130610}} = props
-    const [hideMoney, toggleHide] = useState(false)
-    return (
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.title}>本月支出(元)</Text>
-        </View>
-        <View style={styles.outWrapper}>
+  console.log(props)
+  const {data = {out: 19300, in: 1102, other: 130610}} = props
+  const [hideMoney, toggleHide] = useState(false)
+  return (
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.title}>本月支出(元)</Text>
+      </View>
+      <View style={styles.outWrapper}>
+        <Text style={{
+          fontSize: colorConfig.baseFontSize * 2,
+          color: colorConfig.white
+        }}
+        >{!hideMoney ? showNum(data.out) : getSnow(6)}
+        </Text>
+        <TouchableOpacity onPress={() => toggleHide(!hideMoney)} activeOpacity={colorConfig.touchOpacity}>
           <Text style={{
-                    fontSize: colorConfig.baseFontSize * 2,
-                    color: colorConfig.white
-                }}
-          >{!hideMoney ? showNum(data.out) : getSnow(6)}
+            fontSize:colorConfig.baseFontSize,
+            color:colorConfig.white
+          }}>
+            {iconList[+hideMoney]}
           </Text>
-          <TouchableOpacity onPress={() => toggleHide(!hideMoney)} activeOpacity={colorConfig.touchOpacity}>
-            <Text style={{
-              fontSize:colorConfig.baseFontSize,
-              color:colorConfig.white
-            }}>
-              {iconList[+hideMoney]}
-            </Text>
-          </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.contentWrapper}>
+        <View style={styles.item}>
+          <Text style={styles.title}>本月收入</Text>
+          <Text style={styles.number}>{!hideMoney ? showNum(data.in) : getSnow(3)}</Text>
         </View>
-        <View style={styles.contentWrapper}>
-          <View style={styles.item}>
-            <Text style={styles.title}>本月收入</Text>
-            <Text style={styles.number}>{!hideMoney ? showNum(data.in) : getSnow(3)}</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.title}>预算剩余</Text>
-            <Text style={styles.number}>{!hideMoney ? showNum(data.other) : getSnow(3)}</Text>
-          </View>
+        <View style={styles.item}>
+          <Text style={styles.title}>预算剩余</Text>
+          <Text style={styles.number}>{!hideMoney ? showNum(data.other) : getSnow(3)}</Text>
         </View>
       </View>
-    )
+    </View>
+  )
 }
