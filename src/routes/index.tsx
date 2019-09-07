@@ -1,9 +1,9 @@
-import { createAppContainer} from "react-navigation"
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack';
+import {createAppContainer} from "react-navigation"
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createStackNavigator} from 'react-navigation-stack';
 import React from 'react'
-import { Text } from 'react-native'
-import colorConfig from '../shared/color'
+import {Text} from 'react-native'
+import colorConfig from '../constants/color'
 import Home from "../pages/Home"
 import Check from "../pages/Check"
 import Report from "../pages/Report"
@@ -17,7 +17,7 @@ import CategoryEdit from '../pages/CategoryEdit'
 
 const BottomTab = createBottomTabNavigator(
   {
-
+    
     Home: {
       screen: Home,
       navigationOptions: {
@@ -25,8 +25,8 @@ const BottomTab = createBottomTabNavigator(
         title: '首页'
       }
     },
-
-
+    
+    
     Check: {
       screen: Check,
       navigationOptions: {
@@ -41,7 +41,7 @@ const BottomTab = createBottomTabNavigator(
         header: null
       }
     },
-
+    
     User: {
       screen: User,
       navigationOptions: {
@@ -49,7 +49,7 @@ const BottomTab = createBottomTabNavigator(
         header: null
       }
     },
-
+    
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
@@ -66,9 +66,9 @@ const BottomTab = createBottomTabNavigator(
         } else {
           iconName = 'list-alt'
         }
-
+        
         // You can return any component that you like here!
-        return <Text style={{fontSize:25,color:tintColor}}>{iconName}</Text>
+        return <Text style={{fontSize: 25, color: tintColor}}>{iconName}</Text>
       },
     }),
     tabBarOptions: {
@@ -90,6 +90,8 @@ const getStaticNav = ({title}) => {
 }
 const Root = createStackNavigator(
   {
+    
+    
     BottomTab: {
       screen: BottomTab,
       navigationOptions: {
@@ -99,8 +101,8 @@ const Root = createStackNavigator(
     RecordEdit: {
       screen: RecordEdit,
     },
-
-    CategoryEdit:{
+    
+    CategoryEdit: {
       screen: CategoryEdit,
       navigationOptions: getStaticNav({
         title: '设置'
@@ -109,21 +111,17 @@ const Root = createStackNavigator(
     Category: {
       screen: Category
     },
-
-
+    
+    
     Setting: {
       screen: Setting,
       navigationOptions: getStaticNav({
         title: '设置'
       })
     },
-
-
     AddAsset: {
       screen: AddAsset,
     },
-
-
   }
 );
 

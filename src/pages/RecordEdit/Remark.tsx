@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import colorConfig from '../../shared/color';
+import colorConfig from '../../constants/color';
 import Button from '../../components/Button';
 
 const styles = StyleSheet.create({
@@ -26,29 +26,29 @@ const styles = StyleSheet.create({
     paddingTop: 14,
   },
 });
-
-export default function Report() {
+type Props = {}
+const Report: React.FunctionComponent<Props> = () => {
   const [pickerVisible, setPickerVisible] = useState(false);
   const [desc, setDesc] = useState('');
-
+  
   function handleInput(value) {
     console.log(value);
     setDesc(value);
   }
-
+  
   function handleCancel() {
     setPickerVisible(false);
   }
-
+  
   function handleDate() {
     setPickerVisible(true);
   }
-
+  
   function handleConfirm(value) {
     console.log(value);
     handleCancel();
   }
-
+  
   return (
     <View
       style={{
@@ -94,3 +94,4 @@ export default function Report() {
     </View>
   );
 }
+export default Report;

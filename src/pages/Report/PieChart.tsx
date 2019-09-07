@@ -1,16 +1,18 @@
 import React from 'react'
-import { Text } from 'react-native'
+import {Text} from 'react-native'
 import ChartLayout from '../../components/ChartLayout'
 
-export default function PieChartReport() {
-
-
+type Props = {}
+const PieChartReport: React.FunctionComponent<Props> = () => {
+  
+  
   return (
     <ChartLayout>
       <Text>pie</Text>
     </ChartLayout>
-
+  
   )
-
-
+  
+  
 }
+export default PieChartReport;

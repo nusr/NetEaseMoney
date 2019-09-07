@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, View, Text} from 'react-native';
 
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 20,
     paddingBottom: 20,
-
+    
   },
   itemWrapper: {
     ...colorConfig.flexBetween,
@@ -27,17 +27,17 @@ const iconConfig = {
   color: '#b8b8b8',
   fontSize: 20
 }
-
-function MoreItem(props) {
-  const {data = {}} = props
-  console.log(data)
+type ItemProps = {
+  data: any;
+}
+const MoreItem: React.FunctionComponent<ItemProps> = ({data = {}}) => {
   const Icon = data.icon
   return (
     <View style={styles.itemWrapper}>
       <View style={styles.item}>
         <View style={{paddingRight: 10}}>
           <Text>
-            {data.icon && (<Icon />)}
+            {data.icon && (<Icon/>)}
           </Text>
         </View>
         <View>
@@ -51,8 +51,8 @@ function MoreItem(props) {
           </Text>
         </View>
         <View>
-          <Text style={{color:'#d0d0d0',fontSize:16}}>
-              >
+          <Text style={{color: '#d0d0d0', fontSize: 16}}>
+            >
           </Text>
         </View>
       </View>
@@ -60,29 +60,31 @@ function MoreItem(props) {
   )
 }
 
-
-export default function MoreList(props) {
+type Props = {
+  data: any;
+}
+const MoreList: React.FunctionComponent<Props> = (props: Props) => {
   const {
     data = [
       {
         title: '合规贷款：找小米',
         subTitle: '广告',
-        icon: ()=>(<Text style={iconConfig}>shield-alt</Text>),
+        icon: () => (<Text style={iconConfig}>shield-alt</Text>),
         path: '',
         id: '00'
-
+        
       },
       {
         title: '开通VIP',
         subTitle: '支持导出账单，专属皮肤',
-        icon: ()=>(<Text style={iconConfig}>shield-alt</Text>),
+        icon: () => (<Text style={iconConfig}>shield-alt</Text>),
         path: '',
         id: '11'
       },
       {
         title: '我的福利',
         subTitle: '热门活动',
-        icon: ()=>(<Text style={iconConfig}>gift</Text>),
+        icon: () => (<Text style={iconConfig}>gift</Text>),
         path: '',
         id: '22'
       },
@@ -96,7 +98,7 @@ export default function MoreList(props) {
       {
         title: '邀请好友得VIP',
         subTitle: '立即邀请',
-        icon: ()=>(<Text style={iconConfig}>shield-alt</Text>),
+        icon: () => (<Text style={iconConfig}>shield-alt</Text>),
         path: '',
         id: '44'
       },
@@ -105,7 +107,7 @@ export default function MoreList(props) {
         subTitle: '房贷计算器',
         path: '',
         id: '55',
-        icon: ()=>(<Text style={iconConfig}>tools</Text>)
+        icon: () => (<Text style={iconConfig}>tools</Text>)
       },
     ]
   } = props
@@ -114,10 +116,11 @@ export default function MoreList(props) {
       <FlatList
         data={data}
         keyExtractor={(item, index) => item.id || index}
-        renderItem={({item}) => (<MoreItem data={item} />)}
+        renderItem={({item}) => (<MoreItem data={item}/>)}
       />
     </View>
   );
-
+  
 }
 
+export default MoreList;

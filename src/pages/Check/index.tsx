@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, ScrollView} from "react-native"
 import CommonHeader from '../../components/CommonHeader'
 import BarChart from "./BarChart"
 import CheckList from '../../components/CheckList'
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 const styles = StyleSheet.create({
   scroll: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colorConfig.white
-
+    
   },
   chart: {
     paddingLeft: 20,
@@ -30,33 +30,34 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
 })
-
-export default function Check() {
+type Props = {}
+const Check: React.FunctionComponent<Props> = () => {
   return (
     <View style={styles.container}>
-      <CommonHeader />
+      <CommonHeader/>
       <ScrollView
         automaticallyAdjustContentInsets={false}
         horizontal={false}
         style={styles.scroll}
       >
-        <BarChart />
+        <BarChart/>
         <View style={styles.dateWrapper}>
           <View>
             <Text style={styles.dateTitle}>
-                            账单明细
+              账单明细
             </Text>
           </View>
           <View>
             <Text>按时间</Text>
           </View>
         </View>
-
-        <CheckList />
+        
+        <CheckList/>
       </ScrollView>
-
+    
     </View>
   )
 }
 
 
+export default Check;

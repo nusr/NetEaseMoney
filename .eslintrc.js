@@ -28,12 +28,9 @@ module.exports = {
     allowImportExportEverywhere: false,
   },
   rules: {
-    '@typescript-eslint/explicit-function-return-type':'off',
-    camelcase: 'off',
-    'no-restricted-syntax': 'off',
-    'no-console': ['error', { allow: ['log'] }],
+    '@typescript-eslint/no-explicit-any': 'off',// 暂时关闭
+    '@typescript-eslint/explicit-function-return-type': 'off',// 暂时关闭
     'import/prefer-default-export': 'off',
-    'react/prop-types': 'off',
     'no-unused-vars': [
       'error',
     ],
@@ -45,16 +42,14 @@ module.exports = {
     ],
     'react/jsx-filename-extension': [
       'error',
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
     ],
     'no-unused-vars': 'error',
     'react/jsx-indent-props': ['error', intentSize],
     'react/jsx-indent': ['error', intentSize],
-    indent: ['error', intentSize, { SwitchCase: 1 }],
-    '@typescript-eslint/indent': ['error', intentSize, { SwitchCase: 1 }],
-    'require-atomic-updates': 'off',
+    indent: ['error', intentSize, {SwitchCase: 1}],
+    '@typescript-eslint/indent': ['error', intentSize, {SwitchCase: 1}],
     '@typescript-eslint/prefer-interface': 'off',
-    'prefer-destructuring':'error'
   },
   settings: {
     react: {

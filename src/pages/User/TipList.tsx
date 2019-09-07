@@ -4,17 +4,17 @@ import {
   View,
   Text,
 } from "react-native";
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 const styles = StyleSheet.create({
   tipWrapper: {
     ...colorConfig.flexBetween
   }
 });
-
-function TipItem(props) {
-  const {data = {}} = props
-  console.log(data)
+type ItemProps = {
+  data: any;
+}
+const TipItem: React.FunctionComponent<ItemProps> = ({data = {}}) => {
   return (
     <View>
       <View><Text>{data.icon}</Text></View>
@@ -28,8 +28,8 @@ function TipItem(props) {
     </View>
   )
 }
-
-export default function TipList() {
+type Props = {}
+const TipList: React.FunctionComponent<Props> = () => {
   const tipList = [
     {
       icon: 'test',
@@ -49,17 +49,12 @@ export default function TipList() {
       subTitle: '签到赚钱',
       key: '33'
     },
-    /*        {
-                    icon: 'test2',
-                    title: '赚钱这么快',
-                    subTitle: '广告',
-                    key: '44'
-                }, */
   ]
   return (
     <View style={styles.tipWrapper}>
-      {tipList.map(item => (<TipItem key={item.key} data={item} />))}
+      {tipList.map(item => (<TipItem key={item.key} data={item}/>))}
     </View>
   );
 }
 
+export default TipList;

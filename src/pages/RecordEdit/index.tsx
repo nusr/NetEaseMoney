@@ -15,33 +15,29 @@ const tabList = [
     value: 2,
   },
 ]
-
-function RecordEdit(props) {
-  console.log(props)
-  // 获取参数
+type Props = {}
+const RecordEdit: React.FunctionComponent<Props> = () => {
   // console.log(props.navigation.getParam('name'))
-
+  
   function handleBack() {
     console.log('handleBack')
   }
-
+  
   return (
-    <RecordContent handleBack={handleBack} />
+    <RecordContent handleBack={handleBack}/>
   );
-
+  
 }
 
 RecordEdit.navigationOptions = {
-  header: (props) => {
-    console.log(props)
-
+  header: (props: { navigation: any }) => {
     function back() {
       const {navigation} = props
       navigation.navigate('Home')
       console.log('navigationOptions')
     }
-
-    return (<HeaderTab handleBack={back} tabList={tabList} />)
+    
+    return (<HeaderTab handleBack={back} tabList={tabList}/>)
   }
 }
 

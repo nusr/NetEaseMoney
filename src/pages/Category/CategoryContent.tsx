@@ -3,9 +3,9 @@ import {
   StyleSheet,
   View,
   Text,
-
+  
 } from "react-native";
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 import Button from '../../components/Button'
 
 const buttonCommon = {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: '#f6f6f6'
   },
-
+  
   button: {
     padding: 22,
     ...colorConfig.flexBetween
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   buttonLeft: {
     ...buttonCommon,
     marginRight: 14,
-
+    
   },
   buttonRight: {
     ...buttonCommon,
@@ -65,8 +65,7 @@ const titleStyle = StyleSheet.create({
 })
 
 
-function TitleItem(props) {
-  const {data = {}} = props
+const TitleItem: React.FunctionComponent<{ data: any }> = ({data = {}}) => {
   return (
     <View style={titleStyle.container}>
       <View style={titleStyle.content}>
@@ -108,13 +107,11 @@ const childStyle = StyleSheet.create({
   }
 })
 
-function EmptyItem(props) {
-  const {navigation} = props
-
+const EmptyItem: React.FunctionComponent<{ navigation: any }> = ({navigation}) => {
   function handleCategory() {
     navigation.navigate('CategoryEdit')
   }
-
+  
   return (
     <Button style={childStyle.item} onPress={handleCategory}>
       <View style={childStyle.empty}><Text>+</Text></View>
@@ -123,13 +120,15 @@ function EmptyItem(props) {
 }
 
 
-function ChildItem(props) {
-  const {data = {}, navigation} = props
-
+const ChildItem: React.FunctionComponent<{ data: any; navigation: any }> = ({
+  navigation,
+  data = {}
+}) => {
+  
   function handleCategory() {
     navigation.navigate('CategoryEdit')
   }
-
+  
   return (
     <Button style={childStyle.item} onPress={handleCategory}>
       <View style={titleStyle.icon}><Text>{data.icon}</Text></View>
@@ -138,18 +137,20 @@ function ChildItem(props) {
   )
 }
 
-function ChildList(props) {
-  const {data = [], navigation} = props
+const ChildList: React.FunctionComponent<{ data: any; navigation: any }> = ({
+  data = [], navigation
+}) => {
   return (
     <View style={childStyle.container}>
-      {data.map(item => (<ChildItem data={item} navigation={navigation} key={item.id} />))}
-      <EmptyItem navigation={navigation} />
+      {data.map(item => (<ChildItem data={item} navigation={navigation} key={item.id}/>))}
+      <EmptyItem navigation={navigation}/>
     </View>
   )
 }
-
-function CategoryContent(props) {
-  const {navigation} = props
+type Props = {
+  navigation: any;
+}
+const CategoryContent: React.FunctionComponent<Props> = ({navigation}) => {
   const list = [
     {
       icon: 'test',
@@ -177,13 +178,13 @@ function CategoryContent(props) {
     <View style={styles.container}>
       {list.map(item => (
         <View key={item.id}>
-          <TitleItem data={item} />
-          <ChildList data={item.children} navigation={navigation} />
+          <TitleItem data={item}/>
+          <ChildList data={item.children} navigation={navigation}/>
         </View>
       ))}
     </View>
   );
-
+  
 }
 
 

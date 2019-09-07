@@ -3,14 +3,15 @@ import {StyleSheet, View, Text} from "react-native"
 
 const styles = StyleSheet.create({
   container: {
-
+    
     backgroundColor: "#fff",
-
+    
   },
 })
-
-export default function Report(props) {
-  const {data = {title: 'test'}} = props
+type Props = {
+  data: any;
+}
+const CategoryEdit: React.FunctionComponent<Props> = ({data = {title: 'test'}}) => {
   return (
     <View style={styles.container}>
       <View>
@@ -32,6 +33,6 @@ export default function Report(props) {
   )
 }
 
-
+export default CategoryEdit;
 
 

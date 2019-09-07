@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, StyleSheet} from "react-native"
-import colorConfig from "../shared/color";
+import colorConfig from "../constants/color";
 
 const tiger = {
   backgroundColor: colorConfig.checkHeader,
@@ -30,19 +30,19 @@ const styles = StyleSheet.create({
     paddingRight: 20
   }
 })
-
-export default function ChartLayout(props) {
-  const {children} = props
+type Props = {}
+const ChartLayout: React.FunctionComponent<Props> = ({children}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.left} />
-      <View style={styles.right} />
+      <View style={styles.left}/>
+      <View style={styles.right}/>
       <View style={styles.main}>
         {children}
       </View>
-
+    
     </View>
-
+  
   )
-
+  
 }
+export default ChartLayout

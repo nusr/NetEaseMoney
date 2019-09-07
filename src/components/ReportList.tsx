@@ -9,9 +9,11 @@ const styles = StyleSheet.create({
     paddingLeft: 20
   }
 })
+type Props = {
+  data: any;
+}
 
-
-export default function ReportList(props) {
+const ReportList: React.FunctionComponent<Props> = (props: Props) => {
   const {
     data = [
       {
@@ -35,10 +37,11 @@ export default function ReportList(props) {
       <FlatList
         data={data}
         keyExtractor={(item, index) => item.id || index}
-        renderItem={({item}) => (<ReportItem data={item} />)}
+        renderItem={({item}) => (<ReportItem data={item}/>)}
       />
     </View>
   );
-
+  
 }
 
+export default ReportList;

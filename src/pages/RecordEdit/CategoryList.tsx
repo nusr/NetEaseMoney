@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {StyleSheet, View, Text} from "react-native"
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 import Button from '../../components/Button'
 
 const styles = StyleSheet.create({
@@ -37,11 +37,10 @@ const styles = StyleSheet.create({
   },
   item: {},
   content: {}
-
+  
 })
 
-function CategoryItem(props) {
-  const {data = {}} = props
+const CategoryItem: React.FunctionComponent<{ data: any }> = ({data = {}}) => {
   return (
     <View style={styles.item}>
       <View style={styles.icon}><Text>{data.icon}</Text></View>
@@ -63,7 +62,8 @@ function getMockData() {
 }
 
 const pageSize = 8;
-export default function CategoryList() {
+type Props = {}
+const CategoryList: React.FunctionComponent<Props> = () => {
   const [page, setPage] = useState(0)
   const data = getMockData()
   const totalPage = Math.ceil(data.length / pageSize)
@@ -75,11 +75,11 @@ export default function CategoryList() {
   const list = data.slice(page * pageSize, (page + 1) * pageSize);
   const top = list.slice(0, 4)
   const bottom = list.slice(4) || []
-
+  
   function handlePageChange(i) {
     setPage(i)
   }
-
+  
   function activeColor(i) {
     if (i === page) {
       return {
@@ -88,31 +88,31 @@ export default function CategoryList() {
       }
     }
     return styles.dotWrapper
-
+    
   }
-
+  
   return (
     <View style={styles.container}>
       <View
         style={styles.content}
       >
         <View style={styles.wrapper}>
-          {top.map(item => (<CategoryItem key={item.id} data={item} />))}
+          {top.map(item => (<CategoryItem key={item.id} data={item}/>))}
         </View>
         <View style={styles.wrapper}>
-          {bottom.map(item => (<CategoryItem key={item.id} data={item} />))}
+          {bottom.map(item => (<CategoryItem key={item.id} data={item}/>))}
         </View>
       </View>
       <View style={styles.page}>
         {pages.map((item) => (
           <Button style={activeColor(item)} onPress={() => handlePageChange(item)} key={item}>
-            <Text />
+            <Text/>
           </Button>))}
       </View>
     </View>
   )
 }
 
-
+export default CategoryList;
 
 

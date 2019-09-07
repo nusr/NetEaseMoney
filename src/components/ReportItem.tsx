@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import colorConfig from '../shared/color'
+import colorConfig from '../constants/color'
 import {showNum} from '../utils'
 
 const styles = StyleSheet.create({
@@ -50,9 +50,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   }
 })
-
-function ListItem(props) {
-  const {data = {} }  = props
+type  Props = {
+  data: any;
+}
+const ListItem: React.FunctionComponent<Props> = ({data = {}}) => {
   return (
     <View style={styles.container}>
       <View style={{paddingRight: 20}}>
@@ -60,14 +61,14 @@ function ListItem(props) {
           <Text>icon</Text>
         </View>
       </View>
-
+      
       <View style={styles.main}>
         <View style={styles.content}>
           <View style={{paddingBottom: 10}}>
             <Text style={styles.type}>{data.typeId} {data.percent}%</Text>
           </View>
           <View style={styles.bottom}>
-            <View style={{backgroundColor: colorConfig.primaryColor, width: 40, flex: 1,borderRadius: 5,}} />
+            <View style={{backgroundColor: colorConfig.primaryColor, width: 40, flex: 1, borderRadius: 5,}}/>
           </View>
         </View>
         <View style={styles.more}>
@@ -77,13 +78,13 @@ function ListItem(props) {
           </View>
           <View>
             <Text style={{
-              color:'#d0d0d0',
+              color: '#d0d0d0',
               fontSize: 16
             }}>></Text>
           </View>
         </View>
       </View>
-
+    
     </View>
   )
 }

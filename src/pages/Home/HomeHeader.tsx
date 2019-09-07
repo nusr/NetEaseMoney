@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native'
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 import {showNum} from '../../utils'
 
 const styles = StyleSheet.create({
@@ -31,15 +31,22 @@ const styles = StyleSheet.create({
   },
   item: colorConfig.flexBetween
 })
-const iconList = ['ios-eye', 'ios-eye-off']
-const getSnow = (num) => {
+const iconList: string[] = ['ios-eye', 'ios-eye-off']
+const getSnow = (num: number): string => {
   const result = []
   for (let i = 0; i < num; i += 1) {
     result.push('*')
   }
   return result.join('')
 }
-export default function HomeHeader(props) {
+type Props = {
+  data?: {
+    out: number;
+    in: number;
+    other: number;
+  };
+}
+const HomeHeader: React.FunctionComponent<Props> = (props: Props) => {
   console.log(props)
   const {data = {out: 19300, in: 1102, other: 130610}} = props
   const [hideMoney, toggleHide] = useState(false)
@@ -57,8 +64,8 @@ export default function HomeHeader(props) {
         </Text>
         <TouchableOpacity onPress={() => toggleHide(!hideMoney)} activeOpacity={colorConfig.touchOpacity}>
           <Text style={{
-            fontSize:colorConfig.baseFontSize,
-            color:colorConfig.white
+            fontSize: colorConfig.baseFontSize,
+            color: colorConfig.white
           }}>
             {iconList[+hideMoney]}
           </Text>
@@ -77,3 +84,4 @@ export default function HomeHeader(props) {
     </View>
   )
 }
+export default HomeHeader;

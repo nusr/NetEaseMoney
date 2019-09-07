@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import _ from 'lodash'
-import colorConfig from '../shared/color'
+import colorConfig from '../constants/color'
 import {showNum} from '../utils'
 
 const styles = StyleSheet.create({
@@ -37,9 +36,13 @@ const styles = StyleSheet.create({
     fontSize: 16
   }
 })
-
-function CheckItem(props) {
-  const item = _.get(props, 'data.item', {})
+type Props = {
+  data: {
+    item: any;
+  };
+}
+const CheckItem: React.FunctionComponent<Props> = ({data}) => {
+  const {item = {}} = data
   return (
     <View style={styles.container}>
       <View style={{paddingRight: 20}}>

@@ -1,6 +1,6 @@
 import React from "react"
 import {StyleSheet, View, Text} from "react-native"
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 const styles = StyleSheet.create({
   container: {
@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     paddingRight: 20
   }
 })
-
-export default function Report() {
+type Props = {}
+const Report: React.FunctionComponent<Props> = () => {
   return (
     <View style={styles.container}>
       <View style={colorConfig.flexBetween}>
@@ -26,6 +26,6 @@ export default function Report() {
   )
 }
 
-
+export default Report;
 
 

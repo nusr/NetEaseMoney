@@ -3,7 +3,7 @@ import {Text} from 'react-native'
 import CategoryContent from './CategoryContent'
 import HeaderTab from '../../components/HeaderTab'
 import Button from '../../components/Button'
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 const tabList = [
   {
@@ -15,35 +15,37 @@ const tabList = [
     value: 1,
   }
 ]
-
-function RecordEdit(props) {
+type Props = {
+  navigation: any;
+}
+const RecordEdit: React.FunctionComponent<Props> = (props: Props) => {
   console.log(props)
   // 获取参数
   // console.log(props.navigation.getParam('name'))
   const {navigation} = props
-
+  
   function handleBack() {
     console.log('handleBack')
   }
-
+  
   return (
-    <CategoryContent handleBack={handleBack} navigation={navigation} />
+    <CategoryContent handleBack={handleBack} navigation={navigation}/>
   );
-
+  
 }
 
 RecordEdit.navigationOptions = {
   header: (props) => {
-
+    
     function back() {
       const {navigation} = props
       navigation.navigate('Setting')
     }
-
+    
     function sortItem() {
       console.log('sort')
     }
-
+    
     return (
       <HeaderTab handleBack={back} tabList={tabList}>
         <Button

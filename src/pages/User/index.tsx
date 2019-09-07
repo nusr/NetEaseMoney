@@ -4,7 +4,7 @@ import {
   View,
   Text,
 } from "react-native";
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 import TipList from './TipList'
 import MoreList from './MoreList'
 import Button from '../../components/Button'
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
-
+    
   },
   nickWrapper: {
     paddingLeft: 20
@@ -44,23 +44,27 @@ const styles = StyleSheet.create({
     flex: 1
   }
 });
+type Props = {
+  navigation: any;
+}
 
 /* TODO: bells 图标要换 */
-export default function User(props) {
+const User: React.FunctionComponent<Props> = ({
+  navigation
+}) => {
   function handleNavigate() {
-    const {navigation} = props
     navigation.navigate('Setting')
   }
-
+  
   return (
     <View style={styles.container}>
       <View style={styles.topHeader}>
         <View style={styles.settingWrapper}>
           <View style={{paddingRight: 26}}>
-            <Text style={{fontSize:26,color:'#4e5260'}}>bells</Text>
+            <Text style={{fontSize: 26, color: '#4e5260'}}>bells</Text>
           </View>
           <Button onPress={handleNavigate}>
-            <Text style={{fontSize:26,color:'#4e5260'}}>setting</Text>
+            <Text style={{fontSize: 26, color: '#4e5260'}}>setting</Text>
           </Button>
         </View>
         <View style={styles.infoWrapper}>
@@ -76,15 +80,16 @@ export default function User(props) {
             </View>
           </View>
         </View>
-        <View style={styles.tipWrapper}>
-          <TipList />
+        <View>
+          <TipList/>
         </View>
       </View>
-      <View style={styles.gap} />
+      <View style={styles.gap}/>
       <View style={styles.moreWrapper}>
-        <MoreList />
+        <MoreList/>
       </View>
     </View>
   );
 }
 
+export default User;

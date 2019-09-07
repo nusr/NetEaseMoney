@@ -3,13 +3,13 @@ import {
   StyleSheet,
   View,
   Text,
-
+  
 } from "react-native";
 import HeaderMoney from './HeaderMoney'
 import CategoryList from './CategoryList'
 import Remark from './Remark'
 import Button from '../../components/Button'
-import colorConfig from '../../shared/color'
+import colorConfig from '../../constants/color'
 
 const buttonCommon = {
   borderColor: colorConfig.primaryColor,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: '#f6f6f6'
   },
-
+  
   button: {
     position: 'absolute',
     bottom: 0,
@@ -39,32 +39,32 @@ const styles = StyleSheet.create({
   buttonLeft: {
     ...buttonCommon,
     marginRight: 14,
-
+    
   },
   buttonRight: {
     ...buttonCommon,
     backgroundColor: colorConfig.primaryColor
   }
 });
+type Props = {}
 
-
-function RecordContent() {
-
+const RecordContent: React.FunctionComponent<Props> = () => {
+  
   function handleDelete() {
     console.log('delete')
   }
-
+  
   function handleSave() {
     console.log('save')
   }
-
+  
   return (
     <View style={styles.container}>
       <View style={{flex: 1}}>
-        <HeaderMoney />
-        <View style={styles.gap} />
-        <CategoryList />
-        <Remark />
+        <HeaderMoney/>
+        <View style={styles.gap}/>
+        <CategoryList/>
+        <Remark/>
       </View>
       <View style={styles.button}>
         <Button onPress={handleDelete} style={styles.buttonLeft}>
@@ -82,7 +82,7 @@ function RecordContent() {
       </View>
     </View>
   );
-
+  
 }
 
 

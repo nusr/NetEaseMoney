@@ -11,32 +11,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-
+    
   },
   list: {
     paddingTop: 40
   },
 })
+type Props = {}
 
-export default function Report() {
+const Report: React.FunctionComponent<Props> = () => {
   return (
     <View style={styles.container}>
-      <CommonHeader noScroll />
+      <CommonHeader noScroll/>
       <ScrollView
         automaticallyAdjustContentInsets={false}
         horizontal={false}
         style={styles.scroll}
       >
-        <PieChart />
+        <PieChart/>
         <View style={styles.list}>
-          <ReportList />
+          <ReportList/>
         </View>
       </ScrollView>
-
+    
     </View>
   )
 }
 
 
-
+export default Report;
 

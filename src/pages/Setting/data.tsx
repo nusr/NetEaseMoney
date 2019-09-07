@@ -1,6 +1,10 @@
-
 // 记账设置
-export const recordSetting = [
+export type RecordItemType = {
+  title: string;
+  subTitle: string;
+  path: string;
+}
+export const recordSetting: RecordItemType[] = [
   {
     title: '我的货币和汇率',
     subTitle: '',
@@ -34,7 +38,7 @@ export const recordSetting = [
     path: '',
   }
 ]
-export const appSetting = [
+export const appSetting: RecordItemType[] = [
   {
     title: '自动同步',
     subTitle: '',

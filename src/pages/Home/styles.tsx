@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import colorConfig from "../../shared/color";
+import colorConfig from "../../constants/color";
 
 
 export default StyleSheet.create({

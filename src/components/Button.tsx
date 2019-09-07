@@ -1,19 +1,18 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native'
-import PropTypes from 'prop-types'
-import colorConfig from '../shared/color'
+import colorConfig from '../constants/color'
 
-function Button(props) {
-  const {children, onPress, ...rest} = props
+type Props = {
+  onPress: () => void;
+}
+const Button: React.FunctionComponent<Props> = ({
+  children, onPress, ...rest
+}) => {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={colorConfig.touchOpacity} {...rest}>
       {children}
     </TouchableOpacity>
   )
-}
-
-Button.propTypes = {
-  onPress: PropTypes.func.isRequired,
 }
 
 export default Button
