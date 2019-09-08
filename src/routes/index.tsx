@@ -14,7 +14,12 @@ import Setting from '../pages/Setting'
 import Category from '../pages/Category'
 import CategoryEdit from '../pages/CategoryEdit'
 // TODO: 配置状态栏
-
+const headerTitleStyle = {
+  flex: 1,
+  textAlign: 'center',
+  fontWeight: '500',
+  fontSize: 16
+}
 const BottomTab = createBottomTabNavigator(
   {
     
@@ -67,7 +72,6 @@ const BottomTab = createBottomTabNavigator(
           iconName = 'list-alt'
         }
         
-        // You can return any component that you like here!
         return <Text style={{fontSize: 25, color: tintColor}}>{iconName}</Text>
       },
     }),
@@ -77,17 +81,6 @@ const BottomTab = createBottomTabNavigator(
     },
   }
 )
-const getStaticNav = ({title}) => {
-  return {
-    title,
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: 'center',
-      fontWeight: '500',
-      fontSize: 16
-    },
-  }
-}
 const Root = createStackNavigator(
   {
     
@@ -104,9 +97,12 @@ const Root = createStackNavigator(
     
     CategoryEdit: {
       screen: CategoryEdit,
-      navigationOptions: getStaticNav({
-        title: '设置'
-      })
+      navigationOptions() {
+        return {
+          title: '设置',
+          headerTitleStyle
+        }
+      }
     },
     Category: {
       screen: Category
@@ -115,9 +111,12 @@ const Root = createStackNavigator(
     
     Setting: {
       screen: Setting,
-      navigationOptions: getStaticNav({
-        title: '设置'
-      })
+      navigationOptions() {
+        return {
+          title: '设置',
+          headerTitleStyle
+        }
+      }
     },
     AddAsset: {
       screen: AddAsset,

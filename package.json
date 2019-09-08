@@ -10,7 +10,8 @@
     "phone": "adb devices",
     "lint-staged": "lint-staged",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
-    "build:android": "cd android && ./gradlew assembleRelease"
+    "build:android": "cd android && ./gradlew assembleRelease",
+    "test": "jest --coverage --passWithNoTests"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",

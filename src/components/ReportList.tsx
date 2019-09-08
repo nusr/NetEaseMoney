@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import ReportItem from './ReportItem'
-
+import { ReportItemType } from '../type'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   }
 })
 type Props = {
-  data: any;
+  data: ReportItemType[];
 }
 
 const ReportList: React.FunctionComponent<Props> = (props: Props) => {
