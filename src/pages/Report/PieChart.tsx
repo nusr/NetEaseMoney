@@ -1,18 +1,14 @@
-import React from 'react'
-import {Text} from 'react-native'
-import ChartLayout from '../../components/ChartLayout'
-
-type Props = {}
+import React from 'react';
+import ChartLayout from '../../components/ChartLayout';
+import {VictoryPie} from 'victory-native';
+type Props = {};
 const PieChartReport: React.FunctionComponent<Props> = () => {
-  
-  
   return (
     <ChartLayout>
-      <Text>pie</Text>
+      <VictoryPie
+        data={[{x: 'Cats', y: 35}, {x: 'Dogs', y: 40}, {x: 'Birds', y: 55}]}
+      />
     </ChartLayout>
-  
-  )
-  
-  
-}
+  );
+};
 export default PieChartReport;

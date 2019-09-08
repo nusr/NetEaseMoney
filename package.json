@@ -34,18 +34,18 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
-    "@antv/f2": "^3.4.1",
     "lodash": "^4.17.15",
     "react": "16.9.0",
     "react-native": "0.60.5",
-    "react-native-canvas": "^0.1.33",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-modal-datetime-picker": "^7.5.0",
     "react-native-reanimated": "^1.2.0",
     "react-native-screens": "^2.0.0-alpha.1",
+    "react-native-svg": "^9.8.5",
     "react-navigation": "^4.0.0",
     "react-navigation-stack": "^1.5.3",
-    "react-navigation-tabs": "^2.4.0"
+    "react-navigation-tabs": "^2.4.0",
+    "victory-native": "^33.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
