@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native'
 import colorConfig from '../../constants/color'
 import {showNum} from '../../utils'
-
+import Icon,{IconNames} from '../../iconfont/Icon'
 const styles = StyleSheet.create({
   container: {
     color: colorConfig.white,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   item: colorConfig.flexBetween
 })
-const iconList: string[] = ['ios-eye', 'ios-eye-off']
+const iconList: IconNames[] = ['eye','eye-hide']
 const getSnow = (num: number): string => {
   const result = []
   for (let i = 0; i < num; i += 1) {
@@ -63,12 +63,8 @@ const HomeHeader: React.FunctionComponent<Props> = (props: Props) => {
         >{!hideMoney ? showNum(data.out) : getSnow(6)}
         </Text>
         <TouchableOpacity onPress={() => toggleHide(!hideMoney)} activeOpacity={colorConfig.touchOpacity}>
-          <Text style={{
-            fontSize: colorConfig.baseFontSize,
-            color: colorConfig.white
-          }}>
-            {iconList[+hideMoney]}
-          </Text>
+          <Icon name={iconList[+hideMoney]} color={colorConfig.lightGray}>
+          </Icon>
         </TouchableOpacity>
       </View>
       <View style={styles.contentWrapper}>

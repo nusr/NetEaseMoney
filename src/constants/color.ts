@@ -15,6 +15,7 @@ export default {
   checkHeader:'#352f68',
   f8:'#f8f8f8',
   borderColor:'#e5e5e5',
+  iconColor:'#d0d0d0',
   flexBetween: {
     display: 'flex',
     justifyContent: 'space-between',

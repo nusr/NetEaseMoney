@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View, Text, ScrollView} from 'react-native';
 import colorConfig from '../../constants/color'
 import {recordSetting, appSetting} from './data'
 import Button from '../../components/Button'
-
+import Icon from '../../iconfont/Icon'
 const styles = StyleSheet.create({
   container: {
     flex: 1
@@ -69,12 +69,7 @@ const MoreItem: React.FunctionComponent<MoreProps> = ({data = {}, navigation}) =
         </View>
         {showArrow && (
           <View>
-            <Text style={{
-              fontSize: 16,
-              color: '#d0d0d0'
-            }}>
-              >
-            </Text>
+            <Icon name="right-arrow" size={16} color={colorConfig.iconColor}></Icon>
           </View>)}
       
       </View>

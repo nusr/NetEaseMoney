@@ -4,12 +4,13 @@ import colorConfig from '../constants/color'
 
 type Props = {
   onPress: () => void;
+  style?: object;
 }
 const Button: React.FunctionComponent<Props> = ({
-  children, onPress, ...rest
+  children, onPress,style = {}, ...rest
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={colorConfig.touchOpacity} {...rest}>
+    <TouchableOpacity style={style} onPress={onPress} activeOpacity={colorConfig.touchOpacity} {...rest}>
       {children}
     </TouchableOpacity>
   )

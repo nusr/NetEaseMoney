@@ -2,7 +2,7 @@ import {createAppContainer} from "react-navigation"
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import React from 'react'
-import {Text} from 'react-native'
+import Icon,{IconNames} from '../iconfont/Icon'
 import colorConfig from '../constants/color'
 import Home from "../pages/Home"
 import Check from "../pages/Check"
@@ -19,6 +19,14 @@ const headerTitleStyle = {
   textAlign: 'center',
   fontWeight: '500',
   fontSize: 16
+}
+const iconMap: {
+  [key: string]: IconNames;
+} = {
+  'Home':'record',
+  'Use':'user',
+  'Report':'pie-chart',
+  'default':'list'
 }
 const BottomTab = createBottomTabNavigator(
   {
@@ -61,18 +69,10 @@ const BottomTab = createBottomTabNavigator(
       tabBarIcon: (config) => {
         const {tintColor} = config
         const {routeName} = navigation.state;
-        let iconName
-        if (routeName === 'Home') {
-          iconName = `record`;
-        } else if (routeName === 'User') {
-          iconName = `user-alt`;
-        } else if (routeName === 'Report') {
-          iconName = `pie-chart`;
-        } else {
-          iconName = 'list-alt'
-        }
         
-        return <Text style={{fontSize: 25, color: tintColor}}>{iconName}</Text>
+        const iconName: IconNames = iconMap[routeName] || iconMap.default
+
+        return <Icon size={25} color={tintColor} name={iconName}/>
       },
     }),
     tabBarOptions: {
