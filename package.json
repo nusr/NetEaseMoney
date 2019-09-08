@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "build:android": "cd android && ./gradlew assembleRelease",
     "test": "jest --coverage --passWithNoTests",
-    "iconfont":"npx iconfont",
+    "iconfont": "npx iconfont",
     "prestart": "npm run iconfont"
   },
   "devDependencies": {
@@ -37,6 +37,7 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
     "lodash": "^4.17.15",
     "react": "16.9.0",
     "react-native": "0.60.5",
@@ -63,5 +64,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "clearStorage":false
 }

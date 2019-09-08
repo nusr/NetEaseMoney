@@ -24,7 +24,7 @@ const iconMap: {
   [key: string]: IconNames;
 } = {
   'Home':'record',
-  'Use':'user',
+  'User':'user',
   'Report':'pie-chart',
   'default':'list'
 }
