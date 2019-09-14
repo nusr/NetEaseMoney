@@ -5,9 +5,11 @@ const Page = {
   actions: ({model, setState}) => ({
     toggleFocus() {
       const {descFocus} = model();
-      setState(!descFocus);
+      setState({
+        descFocus: !descFocus,
+      });
     },
   }),
 };
 
-export default Page
+export default Page;

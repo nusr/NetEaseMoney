@@ -5,10 +5,10 @@ const storeList = {
   Record,
   Page,
 };
-const STORE_NAMESPACE = {
-  Record: 'Record',
-  Page: 'Page',
-};
+const STORE_NAMESPACE: {[key: string]: string} = {};
+Object.keys(storeList).forEach(key => {
+  STORE_NAMESPACE[key] = key;
+});
 function initStore() {
   Object.entries(storeList).forEach(([key, value]) => {
     setModel(key, value);
