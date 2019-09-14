@@ -1,5 +1,5 @@
 import React from "react"
-import {StyleSheet, View, Text} from "react-native"
+import {StyleSheet, View, Text,TextInput} from "react-native"
 import colorConfig from '../../constants/color'
 
 const styles = StyleSheet.create({
@@ -19,7 +19,7 @@ const Report: React.FunctionComponent<Props> = () => {
           <Text style={{color: colorConfig.title, fontSize: colorConfig.baseFontSize}}>账单金额</Text>
         </View>
         <View>
-          <Text style={{fontSize: 30, color: colorConfig.deepGreen}}>¥39</Text>
+          <TextInput keyboardType="phone-pad" style={{fontSize: 30, color: colorConfig.deepGreen}}>¥39</TextInput>
         </View>
       </View>
     </View>

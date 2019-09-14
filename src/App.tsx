@@ -4,6 +4,7 @@ import Root from './routes';
 import AsyncStorage from '@react-native-community/async-storage';
 import {APP_VERSION} from './constants/storageKeys';
 import packageConfig from '../package.json';
+import { initStore } from './store'
 type Props = {};
 const App: React.FunctionComponent<Props> = () => {
   const [initOver, setInitOver] = useState<boolean>(false);
@@ -17,14 +18,15 @@ const App: React.FunctionComponent<Props> = () => {
       } else {
         await AsyncStorage.setItem(APP_VERSION, packageConfig.version);
       }
-      setInitOver(true);
     }
     // 发生错误 也可以渲染
     try {
       init();
     } catch (error) {
       console.error(error);
+    } finally {
       setInitOver(true);
+      initStore()
     }
   }, []);
   if (!initOver) {
@@ -34,7 +36,7 @@ const App: React.FunctionComponent<Props> = () => {
       </View>
     );
   }
-  console.log('initOver')
+  console.log('initOver');
   return <Root />;
 };
 export default App;

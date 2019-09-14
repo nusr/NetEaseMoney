@@ -1,9 +1,14 @@
 import {NavigationActions, StackActions} from 'react-navigation';
-
+export function timeFormat(time: number) {
+  const date: Date = new Date(time || +new Date());
+  const month = date.getMonth();
+  const day = date.getDate();
+  return `${month + 1}月${day}日`;
+}
 export function resetNavigation(navigation, routeName) {
   const resetAction = StackActions.reset({
     index: 0,
-    actions: [NavigationActions.navigate({routeName})]
+    actions: [NavigationActions.navigate({routeName})],
   });
   navigation.dispatch(resetAction);
 }
@@ -15,11 +20,9 @@ export function showNum(num) {
   const intPart = Math.floor(num / 100);
   let decimalPart = temp;
   if (temp === 0) {
-    decimalPart = '00'
+    decimalPart = '00';
   } else if (temp < 10) {
-    decimalPart = `0${decimalPart}`
+    decimalPart = `0${decimalPart}`;
   }
-  return `¥${intPart.toLocaleString()}.${decimalPart}`
+  return `¥${intPart.toLocaleString()}.${decimalPart}`;
 }
-
-

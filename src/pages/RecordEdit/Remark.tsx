@@ -3,7 +3,9 @@ import {StyleSheet, View, Text, TextInput} from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import colorConfig from '../../constants/color';
 import Button from '../../components/Button';
-
+import Icon from '../../iconfont/Icon';
+import {useModel, STORE_NAMESPACE} from '../../store';
+import {timeFormat} from '../../utils';
 const styles = StyleSheet.create({
   flex: {
     display: 'flex',
@@ -26,29 +28,26 @@ const styles = StyleSheet.create({
     paddingTop: 14,
   },
 });
-type Props = {}
+type Props = {};
 const Report: React.FunctionComponent<Props> = () => {
   const [pickerVisible, setPickerVisible] = useState(false);
-  const [desc, setDesc] = useState('');
-  
-  function handleInput(value) {
-    console.log(value);
-    setDesc(value);
-  }
-  
+  const {setTime, time, setDescription, description} = useModel(
+    STORE_NAMESPACE.Record,
+  );
+  const {toggleFocus} = useModel(STORE_NAMESPACE.Page);
   function handleCancel() {
     setPickerVisible(false);
   }
-  
+
   function handleDate() {
     setPickerVisible(true);
   }
-  
-  function handleConfirm(value) {
-    console.log(value);
+
+  function handleConfirm(value: Date) {
+    setTime(value.getTime());
     handleCancel();
   }
-  
+
   return (
     <View
       style={{
@@ -58,26 +57,28 @@ const Report: React.FunctionComponent<Props> = () => {
       <View style={styles.flex}>
         <View style={styles.date}>
           <Button onPress={handleDate} style={styles.dateWrapper}>
-            <Text>calendar</Text>
+            <Icon name="calendar" />
             <Text
               style={{paddingLeft: 10, fontSize: 16, color: colorConfig.title}}>
-              4月4日
+              {timeFormat(time)}
             </Text>
           </Button>
-        </View>
-        <View style={styles.remark}>
-          <TextInput
-            value={desc}
-            style={{color: colorConfig.title, fontSize: 16}}
-            placeholder="请输入备注信息(最多140个字)"
-            onChangeText={handleInput}
-          />
         </View>
         <DateTimePicker
           isVisible={pickerVisible}
           onConfirm={handleConfirm}
           onCancel={handleCancel}
         />
+        <View style={styles.remark}>
+          <TextInput
+            onBlur={toggleFocus}
+            onFocus={toggleFocus}
+            value={description}
+            style={{color: colorConfig.title, fontSize: 16}}
+            placeholder="请输入备注信息(最多140个字)"
+            onChangeText={setDescription}
+          />
+        </View>
       </View>
       <View style={{paddingTop: 30}}>
         <View style={styles.flex}>
@@ -93,5 +94,5 @@ const Report: React.FunctionComponent<Props> = () => {
       </View>
     </View>
   );
-}
+};
 export default Report;

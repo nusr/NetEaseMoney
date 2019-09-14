@@ -18,13 +18,8 @@ const tabList = [
 type Props = {}
 const RecordEdit: React.FunctionComponent<Props> = () => {
   // console.log(props.navigation.getParam('name'))
-  
-  function handleBack() {
-    console.log('handleBack')
-  }
-  
   return (
-    <RecordContent handleBack={handleBack}/>
+    <RecordContent/>
   );
   
 }
