@@ -13,6 +13,7 @@
     "build:android": "cd android && ./gradlew assembleRelease",
     "test": "jest --coverage --passWithNoTests",
     "iconfont": "npx iconfont",
+    "preios":"cd ios && pod install",
     "prestart": "npm run iconfont"
   },
   "devDependencies": {
