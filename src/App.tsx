@@ -12,7 +12,7 @@ const App: React.FunctionComponent<Props> = () => {
       const oldVersion: string =
         (await AsyncStorage.getItem(APP_VERSION)) || packageConfig.version;
       // 版本更新或者开启清除存储 都清空本地存储
-      if (oldVersion !== packageConfig.version || packageConfig.clearStorage) {
+      if (oldVersion !== packageConfig.version) {
         await AsyncStorage.clear();
       } else {
         await AsyncStorage.setItem(APP_VERSION, packageConfig.version);
