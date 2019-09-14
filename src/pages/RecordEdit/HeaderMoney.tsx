@@ -17,6 +17,7 @@ type Props = {};
 
 const Report: React.FunctionComponent<Props> = () => {
   const {setMoney, money, prefix} = useModel(STORE_NAMESPACE.Record);
+  const {toggleFocus} = useModel(STORE_NAMESPACE.Page);
   let result: string = money;
   if (!result.includes(prefix)) {
     result = prefix + result;
@@ -25,6 +26,7 @@ const Report: React.FunctionComponent<Props> = () => {
     if (money === DEFAULT_MONEY) {
       setMoney('');
     }
+    toggleFocus();
   }
   return (
     <View style={styles.container}>
@@ -42,6 +44,7 @@ const Report: React.FunctionComponent<Props> = () => {
           <TextInput
             onChangeText={setMoney}
             value={result}
+            onBlur={toggleFocus}
             onFocus={handleFocus}
             keyboardType="number-pad"
             style={{fontSize: 30, color: colorConfig.deepGreen}}></TextInput>

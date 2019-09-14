@@ -1,0 +1,842 @@
+[
+  {
+    "id": 1,
+    "icon": "catering.png",
+    "name": "餐饮",
+    "parentId": 0,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 2,
+    "icon": "snack_wine.png",
+    "name": "零食烟酒",
+    "parentId": 0,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 3,
+    "icon": "shopping.png",
+    "name": "购物",
+    "parentId": 0,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 5,
+    "icon": "traffic.png",
+    "name": "交通",
+    "parentId": 0,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 6,
+    "icon": "entertainment.png",
+    "name": "娱乐",
+    "parentId": 0,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 7,
+    "icon": "education.png",
+    "name": "文教",
+    "parentId": 0,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 9,
+    "icon": "communicate.png",
+    "name": "通讯",
+    "parentId": 0,
+    "visible": true,
+    "order": 7
+  },
+  {
+    "id": 12,
+    "icon": "medical.png",
+    "name": "医疗",
+    "parentId": 0,
+    "visible": true,
+    "order": 8
+  },
+  {
+    "id": 14,
+    "icon": "invest.png",
+    "name": "投资",
+    "parentId": 0,
+    "visible": true,
+    "order": 9
+  },
+  {
+    "id": 7150,
+    "icon": "shopping.png",
+    "name": "书籍",
+    "parentId": 0,
+    "visible": true,
+    "order": 10
+  },
+  {
+    "id": 8,
+    "icon": "car.png",
+    "name": "汽车",
+    "parentId": 0,
+    "visible": true,
+    "order": 11
+  },
+  {
+    "id": 10,
+    "icon": "child.png",
+    "name": "育儿",
+    "parentId": 0,
+    "visible": true,
+    "order": 12
+  },
+  {
+    "id": 4,
+    "icon": "house.png",
+    "name": "住房",
+    "parentId": 0,
+    "visible": true,
+    "order": 13
+  },
+  {
+    "id": 11,
+    "icon": "human.png",
+    "name": "人情",
+    "parentId": 0,
+    "visible": true,
+    "order": 14
+  },
+  {
+    "id": 13,
+    "icon": "travel.png",
+    "name": "旅行",
+    "parentId": 0,
+    "visible": true,
+    "order": 15
+  },
+  {
+    "id": 15,
+    "icon": "investloss.png",
+    "name": "投资亏损",
+    "parentId": 0,
+    "visible": true,
+    "order": 16
+  },
+  {
+    "id": 16,
+    "icon": "lend.png",
+    "name": "借出",
+    "parentId": 0,
+    "visible": true,
+    "order": 17
+  },
+  {
+    "id": 17,
+    "icon": "paydebt.png",
+    "name": "还债",
+    "parentId": 0,
+    "visible": true,
+    "order": 18
+  },
+  {
+    "id": 18,
+    "icon": "interestspend.png",
+    "name": "利息支出",
+    "parentId": 0,
+    "visible": true,
+    "order": 19
+  },
+  {
+    "id": 20,
+    "icon": "other.png",
+    "name": "其他",
+    "parentId": 0,
+    "visible": true,
+    "order": 20
+  },
+  {
+    "id": 55298,
+    "icon": "catering.png",
+    "name": "开发",
+    "parentId": 0,
+    "visible": true,
+    "order": 21
+  },
+  {
+    "id": 96,
+    "icon": "meal.png",
+    "name": "三餐",
+    "parentId": 1,
+    "visible": false,
+    "order": 1
+  },
+  {
+    "id": 21,
+    "icon": "dailynecess.png",
+    "name": "油盐酱醋",
+    "parentId": 1,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 22,
+    "icon": "foodmaterial.png",
+    "name": "食材",
+    "parentId": 1,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 2314,
+    "icon": "catering.png",
+    "name": "早餐",
+    "parentId": 1,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 6679,
+    "icon": "catering.png",
+    "name": "中饭",
+    "parentId": 1,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 6680,
+    "icon": "catering.png",
+    "name": "晚饭",
+    "parentId": 1,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 22250,
+    "icon": "babydiaper.png",
+    "name": "苹果",
+    "parentId": 2,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 23,
+    "icon": "fruit.png",
+    "name": "水果",
+    "parentId": 2,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 24,
+    "icon": "sweet.png",
+    "name": "甜点",
+    "parentId": 2,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 25,
+    "icon": "tea.png",
+    "name": "茶水",
+    "parentId": 2,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 26,
+    "icon": "snacks.png",
+    "name": "零食",
+    "parentId": 2,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 27,
+    "icon": "drink.png",
+    "name": "饮料",
+    "parentId": 2,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 97,
+    "icon": "wine.png",
+    "name": "烟酒",
+    "parentId": 2,
+    "visible": true,
+    "order": 7
+  },
+  {
+    "id": 28,
+    "icon": "digital.png",
+    "name": "数码",
+    "parentId": 3,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 29,
+    "icon": "daily.png",
+    "name": "日用",
+    "parentId": 3,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 30,
+    "icon": "toy.png",
+    "name": "玩具",
+    "parentId": 3,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 31,
+    "icon": "electric.png",
+    "name": "电器",
+    "parentId": 3,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 32,
+    "icon": "beauty.png",
+    "name": "美妆",
+    "parentId": 3,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 33,
+    "icon": "sports.png",
+    "name": "运动用品",
+    "parentId": 3,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 34,
+    "icon": "shoes.png",
+    "name": "鞋服",
+    "parentId": 3,
+    "visible": true,
+    "order": 7
+  },
+  {
+    "id": 35,
+    "icon": "jewelry.png",
+    "name": "饰品",
+    "parentId": 3,
+    "visible": true,
+    "order": 8
+  },
+  {
+    "id": 695352,
+    "icon": "catering.png",
+    "name": "纸书",
+    "parentId": 3,
+    "visible": false,
+    "order": 9
+  },
+  {
+    "id": 36,
+    "icon": "fitment.png",
+    "name": "家具",
+    "parentId": 4,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 37,
+    "icon": "textiles.png",
+    "name": "家纺",
+    "parentId": 4,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 38,
+    "icon": "waterelectricity.png",
+    "name": "物业水电",
+    "parentId": 4,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 39,
+    "icon": "decoration.png",
+    "name": "装修",
+    "parentId": 4,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 98,
+    "icon": "rent.png",
+    "name": "房租",
+    "parentId": 4,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 968674,
+    "icon": "catering.png",
+    "name": "测试",
+    "parentId": 4,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 40,
+    "icon": "taxi.png",
+    "name": "打车",
+    "parentId": 5,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 41,
+    "icon": "airticket.png",
+    "name": "机票",
+    "parentId": 5,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 42,
+    "icon": "train.png",
+    "name": "火车",
+    "parentId": 5,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 99,
+    "icon": "bus.png",
+    "name": "公交",
+    "parentId": 5,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 5098,
+    "icon": "schoolfee.png",
+    "name": "汽车",
+    "parentId": 5,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 3019,
+    "icon": "catering.png",
+    "name": "地铁",
+    "parentId": 5,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 43,
+    "icon": "pet.png",
+    "name": "宠物",
+    "parentId": 6,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 44,
+    "icon": "game.png",
+    "name": "游戏",
+    "parentId": 6,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 45,
+    "icon": "swim.png",
+    "name": "游泳",
+    "parentId": 6,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 46,
+    "icon": "show.png",
+    "name": "演出",
+    "parentId": 6,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 47,
+    "icon": "film.png",
+    "name": "电影",
+    "parentId": 6,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 48,
+    "icon": "meet.png",
+    "name": "聚会",
+    "parentId": 6,
+    "visible": true,
+    "order": 6
+  },
+  {
+    "id": 104,
+    "icon": "sing.png",
+    "name": "K歌",
+    "parentId": 6,
+    "visible": true,
+    "order": 7
+  },
+  {
+    "id": 52455,
+    "icon": "catering.png",
+    "name": "steam",
+    "parentId": 6,
+    "visible": true,
+    "order": 8
+  },
+  {
+    "id": 3320,
+    "icon": "catering.png",
+    "name": "音乐",
+    "parentId": 6,
+    "visible": true,
+    "order": 9
+  },
+  {
+    "id": 49,
+    "icon": "schoolfee.png",
+    "name": "学费",
+    "parentId": 7,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 50,
+    "icon": "schoolsupplies.png",
+    "name": "文具",
+    "parentId": 7,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 51,
+    "icon": "exam.png",
+    "name": "考试",
+    "parentId": 7,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 52,
+    "icon": "lecture.png",
+    "name": "讲座",
+    "parentId": 7,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 100,
+    "icon": "book.png",
+    "name": "书刊",
+    "parentId": 7,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 53,
+    "icon": "maintain.png",
+    "name": "保养",
+    "parentId": 8,
+    "visible": false,
+    "order": 1
+  },
+  {
+    "id": 54,
+    "icon": "park.png",
+    "name": "停车",
+    "parentId": 8,
+    "visible": false,
+    "order": 2
+  },
+  {
+    "id": 55,
+    "icon": "gas.png",
+    "name": "加油",
+    "parentId": 8,
+    "visible": false,
+    "order": 3
+  },
+  {
+    "id": 56,
+    "icon": "repair.png",
+    "name": "维修",
+    "parentId": 8,
+    "visible": false,
+    "order": 4
+  },
+  {
+    "id": 57,
+    "icon": "fine.png",
+    "name": "罚款",
+    "parentId": 8,
+    "visible": false,
+    "order": 5
+  },
+  {
+    "id": 58,
+    "icon": "carinsurance.png",
+    "name": "车险",
+    "parentId": 8,
+    "visible": false,
+    "order": 6
+  },
+  {
+    "id": 59,
+    "icon": "broadband.png",
+    "name": "宽带",
+    "parentId": 9,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 60,
+    "icon": "telphonefee.png",
+    "name": "话费",
+    "parentId": 9,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 61,
+    "icon": "milkpowder.png",
+    "name": "奶粉",
+    "parentId": 10,
+    "visible": false,
+    "order": 1
+  },
+  {
+    "id": 62,
+    "icon": "pregnant.png",
+    "name": "孕妇用品",
+    "parentId": 10,
+    "visible": false,
+    "order": 2
+  },
+  {
+    "id": 63,
+    "icon": "bedding.png",
+    "name": "寝居",
+    "parentId": 10,
+    "visible": false,
+    "order": 3
+  },
+  {
+    "id": 64,
+    "icon": "childwash.png",
+    "name": "洗护",
+    "parentId": 10,
+    "visible": false,
+    "order": 4
+  },
+  {
+    "id": 65,
+    "icon": "childtoy.png",
+    "name": "玩具",
+    "parentId": 10,
+    "visible": false,
+    "order": 5
+  },
+  {
+    "id": 66,
+    "icon": "childrenwear.png",
+    "name": "童装",
+    "parentId": 10,
+    "visible": false,
+    "order": 6
+  },
+  {
+    "id": 67,
+    "icon": "supplementaryfood.png",
+    "name": "辅食",
+    "parentId": 10,
+    "visible": false,
+    "order": 7
+  },
+  {
+    "id": 68,
+    "icon": "cashgift.png",
+    "name": "礼金",
+    "parentId": 11,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 69,
+    "icon": "treat.png",
+    "name": "请客",
+    "parentId": 11,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 101,
+    "icon": "gift.png",
+    "name": "礼品",
+    "parentId": 11,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 70,
+    "icon": "hospital.png",
+    "name": "住院",
+    "parentId": 12,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 71,
+    "icon": "healthcare.png",
+    "name": "保健",
+    "parentId": 12,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 102,
+    "icon": "doctor.png",
+    "name": "就诊",
+    "parentId": 12,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 72,
+    "icon": "drug.png",
+    "name": "药品",
+    "parentId": 12,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 17946,
+    "icon": "catering.png",
+    "name": "体检",
+    "parentId": 12,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 73,
+    "icon": "tour.png",
+    "name": "团费",
+    "parentId": 13,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 74,
+    "icon": "gateticket.png",
+    "name": "景点门票",
+    "parentId": 13,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 75,
+    "icon": "souvenir.png",
+    "name": "纪念品",
+    "parentId": 13,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 103,
+    "icon": "tolls.png",
+    "name": "旅行路费",
+    "parentId": 13,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 76,
+    "icon": "hotel.png",
+    "name": "酒店",
+    "parentId": 13,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 2012,
+    "icon": "entertainment.png",
+    "name": "基金",
+    "parentId": 14,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 187878,
+    "icon": "catering.png",
+    "name": "黄金",
+    "parentId": 14,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 471375,
+    "icon": "catering.png",
+    "name": "定期",
+    "parentId": 14,
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": 458813,
+    "icon": "catering.png",
+    "name": "彩票",
+    "parentId": 14,
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": 585102,
+    "icon": "catering.png",
+    "name": "恋爱",
+    "parentId": 14,
+    "visible": true,
+    "order": 5
+  },
+  {
+    "id": 21473449,
+    "icon": "catering.png",
+    "name": "纸书",
+    "parentId": 7150,
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": 227125,
+    "icon": "catering.png",
+    "name": "kindle",
+    "parentId": 7150,
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": 735370,
+    "icon": "catering.png",
+    "name": "漫画",
+    "parentId": 7150,
+    "visible": true,
+    "order": 3
+  }
+]

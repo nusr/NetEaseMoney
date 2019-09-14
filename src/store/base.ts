@@ -1,6 +1,5 @@
 // from https://github.com/nanxiaobei/flooks
 import {useState, useEffect} from 'react';
-
 interface State {
   [stateName: string]: any;
 }

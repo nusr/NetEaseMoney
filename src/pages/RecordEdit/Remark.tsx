@@ -27,13 +27,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 14,
   },
+  button: {
+    paddingRight: 10,
+  },
 });
 type Props = {};
 const Report: React.FunctionComponent<Props> = () => {
   const [pickerVisible, setPickerVisible] = useState(false);
-  const {setTime, time, setDescription, description} = useModel(
-    STORE_NAMESPACE.Record,
-  );
+  const {
+    setTime,
+    time,
+    setDescription,
+    description,
+    apply,
+    setApply,
+  } = useModel(STORE_NAMESPACE.Record);
   const {toggleFocus} = useModel(STORE_NAMESPACE.Page);
   function handleCancel() {
     setPickerVisible(false);
@@ -65,6 +73,7 @@ const Report: React.FunctionComponent<Props> = () => {
           </Button>
         </View>
         <DateTimePicker
+          date={time}
           isVisible={pickerVisible}
           onConfirm={handleConfirm}
           onCancel={handleCancel}
@@ -81,16 +90,17 @@ const Report: React.FunctionComponent<Props> = () => {
         </View>
       </View>
       <View style={{paddingTop: 30}}>
-        <View style={styles.flex}>
-          <View style={{paddingRight: 10}}>
-            <Text>icon</Text>
-          </View>
-          <View>
+        <Button style={[styles.flex, styles.button]} onPress={setApply}>
+          <Icon name={apply ? 'ok' : 'ok-out'} color={colorConfig.tabColor} />
+          <View
+            style={{
+              paddingLeft: 10,
+            }}>
             <Text style={{color: colorConfig.subTitle, fontSize: 16}}>
               可报销
             </Text>
           </View>
-        </View>
+        </Button>
       </View>
     </View>
   );

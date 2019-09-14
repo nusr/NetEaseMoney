@@ -4,13 +4,20 @@ const Record = {
     categoryId: '', // 类型id
     description: '', // 描述
     money: DEFAULT_MONEY, // 金额
-    time: 0, //
+    time: +new Date(), //
     type: '',
     prefix: DEFAULT_MONEY_PREFIX,
+    apply: false,
   },
-  actions: ({setState}) => ({
+  actions: ({model, setState}) => ({
     setMoney(money) {
       setState({money});
+    },
+    setApply() {
+      const {apply} = model();
+      setState({
+        apply: !apply,
+      });
     },
     setDescription(description) {
       setState({description});

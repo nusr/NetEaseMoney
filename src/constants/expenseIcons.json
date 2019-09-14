@@ -1,0 +1,11 @@
+[
+  {"id": 86, "icon": "salary.png"},
+  {"id": 87, "icon": "bonus.png"},
+  {"id": 90, "icon": "interestincome.png"},
+  {"id": 92, "icon": "investearn.png"},
+  {"id": 93, "icon": "reimburse.png"},
+  {"id": 94, "icon": "freedebt.png"},
+  {"id": 95, "icon": "refund.png"},
+  {"id": 96, "icon": "accident.png"},
+  {"id": 97, "icon": "otherincome.png"}
+]

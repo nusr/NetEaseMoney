@@ -28,8 +28,7 @@ RecordEdit.navigationOptions = {
   header: (props: { navigation: any }) => {
     function back() {
       const {navigation} = props
-      navigation.navigate('Home')
-      console.log('navigationOptions')
+      navigation.goBack()
     }
     
     return (<HeaderTab handleBack={back} tabList={tabList}/>)

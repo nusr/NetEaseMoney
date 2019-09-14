@@ -19,7 +19,6 @@ type Props = {
   navigation: any;
 }
 const RecordEdit: React.FunctionComponent<Props> = (props: Props) => {
-  console.log(props)
   // 获取参数
   // console.log(props.navigation.getParam('name'))
   const {navigation} = props

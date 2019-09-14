@@ -36,7 +36,6 @@ const App: React.FunctionComponent<Props> = () => {
       </View>
     );
   }
-  console.log('initOver');
   return <Root />;
 };
 export default App;
